@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Pong</title>
+    <link href="/Pong/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="/Pong/Scripts/jquery-1.6.2.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+
+    <script src="/Pong/Scripts/Pong.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var pong = new Pong("#pongCanvas", "#message", "#score", "ws://" + window.location.host + '/Pong/Pong.ashx');
+    });
+    </script>
+
+    <canvas id="pongCanvas" width="400" height="300" style="border: solid 1px; cursor: none;">
+        Sorry, no canvas support in this browser...
+    </canvas>
+    <p id="message">Connecting...</p>
+    <h3 id="score"></h3>
+
+</body>
+</html>

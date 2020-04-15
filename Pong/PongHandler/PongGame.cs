@@ -215,7 +215,9 @@ namespace Pong.PongHandler
             lock (_syncRoot)
             {
                 // stop the ball moving task
-                _ballCancellationTokenSource.Cancel();
+                if (_ballCancellationTokenSource != null)
+                    _ballCancellationTokenSource.Cancel();
+
                 var otherPlayer = OtherPlayer(player);
 
                 if (otherPlayer != null)
